@@ -1,0 +1,25 @@
+Features: 
+
+Product info (mostly implicit data): 
+
+Quantity  
+
+Packaging (plastic, carton or glass) 
+
+Nutrition  
+
+Brand 
+
+Department  
+
+Purchase date 
+
+Consumer info (mostly explicit): 
+
+Age (for alcohol recommendations)  
+
+Gender 
+
+Geo data (regional recommendations) 
+
+Previous orders (price range, items quantity from product info) 
