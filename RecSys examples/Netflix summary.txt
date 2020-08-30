@@ -1,0 +1,99 @@
+Netflix RS Summary:
+various algorithms, including search
+business purpose
+A/B testing, offline experimentation data to improve the system
+designing/interpreting A/B tests
+areas of current innovation
+
+Intro:
+Netflix is inventing internet television
+allows members to stream any video, anytime on any internet-connected device
+internet television is young and competitive, so innovation is crucial
+key pillar of netflix is the recommender system, which helps members find videos
+RS consists of mutliple algos, serving different uses that work together to create the Netflix expeperience
+
+The Netflix Recommender System:
+internet tv about what/when/where to watch - vast options
+ppl get overwhelmed by too many options
+internet tv carries broad catalog to wide audience, including niche titles
+typical netflix member loses interest after 60-90 seconds, then leaves the sight
+recommender problem is to make sure the member finds something interesting in that initial window
+Netflix used to rely on predicting the number of star ratings
+But now, much more data
+	what each member watches
+	how "			" (device, time of day, day of week, intesity of watching)
+	place in product where video was discovered
+	viewed recommendations but not played
+	etc.
+use these data to more accurately predict what a member will watch
+various algos converge on homepage - main presentation of recommendations
+each row has a theme
+
+Algo 1: Personalized Video Ranker (PVR)
+typically 40 rows, 75 videos per row, per homepage
+the videos in a row come from a single algo, the PVR
+orders the entire catalog of videos (or subsets/filters) for each member in a personalized way
+resulting ordering used to select order of videos in genre (why genre rows are difference btwn members)
+PVR works best when using personalized signals with unpersonalized popularity, which is used for the Popular row
+[Amatriain and Basilico, 2012]
+
+Algo 2: Top-N Video Ranker
+finds best few personalized recom's in entire catalog for each member
+optimized/evaluated using metrics and algos that look only at the head of the ranking
+similar to PVR
+
+Algo 3: Trending Now Ranker
+short-term trends are strong predictors fo videos members will watch
+two types: yearly trends (romantic movies on Valentine's Day)
+	   one-off, short-term events (big hurricane cause interest in documentaries about hurricanes)
+
+Algo 4: Continue Watching Ranker
+sorts the subset of recently viewed titles based on estimate of whether member will resume watching
+signals include time elapsed since viewing, point of abandonement(mid-program vs. begin/end), 
+whether different titles have been viewed since, and the devices used.
+each ranking algo uses different math/stat models, signals, and data as input.
+each requries different model trainings designed for the specific purpose of the ranekr.
+
+Algo 5: Video-Video Similarity
+Because You Watched rows are another type of categorization. It anchors its recommendations to a single video watched by the member.
+the vid-vid sim algo drives recos in these rows. 
+sims algo is unpersonalized algo that computes a ranked list of videos (similars) for every video in our catalog.
+sims is unpersonalized, but which BYW rows make it onto a homepage is personalized
+subset of BYW vids reco'ed in a row benefits from personalization, depending on what subsets of the similar videos we estimate a member would enjoy
+
+Algo 6: Page Generation - Row Selection and Ranking
+videos chosen for each row represents estimate of the best choices of videos put in front of a specific user
+but moods change and many accounts are shared
+thus, diverse selection of rows so members can skip over them
+the page generation algo uses output of all algos to construct every page of recommendations, taking relevance and diversity into account
+typical member has >10k rows that could go a homepage, making computation challenging
+before 2015, used a rule-based approach
+now, fully personalized math. algo that selects and orders rows from a large pool of candidates to create an ordering optimized for relevance and diversity.
+[Alvino and Basilico, 2015]
+
+Algo 7: Evidence
+evidence selection algos help members decide if a video is for them
+evidence is all the info at the top left of the page; predicted star rating, synopsis, cast, other metadata, and images
+the algos evaluate all possible evidence items we can display for every reco, to select the few that we think will be most helpful for the member
+ex: decide to show that a certain movie won an Oscar
+
+Algo 8: Search
+rec sys influences choices for 80% of hours streamed
+remaining 20% comes from search, which uses several algos
+one algo finds videos that match a query
+second algo predicts interest in a concept given a partial query
+third algo find video reco's for a given concept
+these algos combine play data, search data, and metadata to arrive at the results
+
+Algo 9: Related Work
+each algo relies on statistical/machine-learning techniques
+inclueds supervised (classification/regression) and unsupervised (dimensionality reduction thru clustering/compression)
+
+
+Business Value
+want to be enormous, global business
+helps members engage with service so that they don't leave
+personalization allows for niche videos
+effective catalog size is a metric that describes how spread viewing is across items in catalog.
+if most viewing goes to single video, it is close to 1
+if all videos have same amount of viewing then number will be close to num of videos in the catalog

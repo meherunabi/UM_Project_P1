@@ -1,0 +1,43 @@
+Two Decades of Recommender Systems at Amazon:
+Intro
+amazon building a store for every customer
+from catalog of 100s of millions, amazon picks a small number of items based off current context and past behavior.
+algorithm shares what other people like
+item-based collaborative filtering algorithm developed in 90s has been hugely successful
+
+Algorithm
+first finds related items for each item in the catalog
+related means "people who buy one item are unusually likely to buy the other"
+once this related items table is built, can generate recommendations quickly as a series of lookups
+for each item in current context and previous interests,
+	look up related items
+	combine them to yield most likely items of interest
+	filter out items already seen/purchased,
+	left with items to recommend
+advantage;
+	majority of computation done offile
+	recommendations are high quality and remain competitive
+	scales to 100s of millions of items without sampling
+	algo updates immediately on new info about a person's interest
+	easily explainable
+
+In 2003, published paper in IEEE
+But since then there has been massive growth
+found ways to refine the algo to procude more relevant recommendations
+Defining "related" items
+	a problem in statistics
+	people buy more non-expensive items
+	no one score that works best all the time
+	need to pick best parameters
+	compatibility
+
+Importance of Time
+how related a purchase is given another purchase relies heavily on time
+some things bought sequentially i.e. camera and then a memory card, not vice versa
+cold-start problems - can use explore/exploit process
+
+
+The Future: Recommendations Everywher
+no need to type search keywords in a box
+discovery will be like talking to a friend who knows you and anticipates your needs
+instead of recommender systems, a focus on understanding the customer

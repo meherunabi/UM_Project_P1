@@ -1,0 +1,4 @@
+Intro to Recommendations at Zillow
+close ration of homes(items) to users and unique regional differences
+two types of models: collaborative filtering and content-based modeling
+Interleaving replaces the need for A/B testing

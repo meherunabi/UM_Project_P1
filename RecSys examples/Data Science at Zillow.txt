@@ -1,0 +1,23 @@
+Data Science at Zillow
+
+Machine Learning
+Home Valuation: Zestimate, Zestimate forecast, zillow home value index, rent zestimate,
+		zillow rent index, pricing tool, best time to list
+User Profiles: Personal predictions, journey location prediction, lender recommendations
+Recommendations: Home recommendations, similar homes, new regions to explore,
+		explain reommendations
+Computer Vision: videos, photos
+B2B: ad campaigns, agent segmentation, search engine marketing (SEM)
+
+data
+zillow driven by data: most comprehensive housing data, over 65 million homes have been updated
+zillow creates data: 2 mm reviews of agents, over 300k lender reviews, 1tb of user activity/day
+data is the product: users trust the data, users want to find a trusted agent/lender,
+	provide data for free for academic/institutional researchers, free consumer data
+
+tools
+spark(scala/python), R, python(numpy,scipy,sklearn,pandas)
+random forest, linear/logistic/quantile regressions
+deep neural nets, matrix factorization, etc.
+AWS
+
