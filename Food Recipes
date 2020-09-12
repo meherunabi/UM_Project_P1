@@ -5,4 +5,10 @@ from surprise import Reader
 from surprise import accuracy
 
 #load data into dataframe
-recipes=pd.read_json
+#read in json file
+#data frame = pd.read_json('filename.json')
+
+df.head(5)
+#remove unneeded columns
+
+#
