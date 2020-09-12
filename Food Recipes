@@ -6,9 +6,12 @@ from surprise import accuracy
 
 #load data into dataframe
 #read in json file
-#data frame = pd.read_json('filename.json')
+RecipesTable = pd.read_json('Research Data Sets\items_table.json')
 
-df.head(5)
+RecipesTable.head(5)
 #remove unneeded columns
 
-#
+to_drop = ['image_path','images','ingredients,'instructions','partition','ingredients_list']
+RecipesTable.drop(to_drop,inplace=True,axis=1)
+
+print("hello")
