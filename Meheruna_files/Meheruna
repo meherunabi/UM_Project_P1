@@ -1,0 +1,4 @@
+1. Downloaded the ingredients dataset from keggle.
+2. Cleaned and distributed individual ingredients into separate column per food_id.Distributed total 15 column so far.
+3. Pivot wider the values(ingredients) into variable(column). 
+Note: So far, merged 3 columns and the total variable for that is more than 5k.
